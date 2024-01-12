@@ -1,4 +1,7 @@
 #include <iostream>
+#include <array>
+
+using namespace std;
 
 char aufgabe15_3_a(int a, int b, int c) {
     if(a > b) {
@@ -26,12 +29,12 @@ char aufgabe15_3_b(int a, int b, int c) {
 
 void aufgabe_15_4(int mult){
     if(mult < 0) {
-        printf("Ungültige Eingabe!\n\n");
+        cout << "Ungültige Eingabe!" << endl;
     }
     else {
         for(int i = 0; i <= mult; i++) {
             int erg = 4 * i;
-            printf("%d, ", erg);
+            cout << erg << endl;
         }
     }
     printf("\n\n");
@@ -40,7 +43,7 @@ void aufgabe_15_4(int mult){
 int aufgabe15_5(int i) {
     int summe;
     if( i < 0){
-        puts("Sie müssen eine Zahl größer null eingeben");
+        cout << "Sie müssen eine Zahl größer null eingeben" << endl;
         return 0;
     }
     do{
@@ -51,58 +54,44 @@ int aufgabe15_5(int i) {
     return summe;
 }
 
-long long max(int a, short b, long c, long long d, char e){
-    if(a > b){
-        if(a > c){
-            if(a > d){
-                if(a > e){
-                    return a;
-                }
-                else {
-                    return e;
-                }
-            }
-            else {
-                return d;
-            }
-        }
-        else {
-            return c;
-        }
-    }
-    else if(b > c){
-        if(b > d){
-            if(b > e){
-                return b;
-            }
-            else {
-                return e;
-            }
-        }
-        else {
-           return d;
-        }
-    }
-    else if(c > d){
-        if(c > e){
-            return c;
-        }
-        else {
-            return e;
-        }
-    }
-    else {
-        return d;
+void aufgabe15_7_iter(int i, int k) {
+    for(; i <= k; i++) {
+        printf("%d\n", 6*i-1);
+        printf("%d\n", 6*i+1);
     }
 }
 
+void aufgabe15_7_recur(int i, int k) {
+    if(i > k) {}
+    else {
+        printf("%d\n", 6*i-1);
+        printf("%d\n", 6*i+1);
+        aufgabe15_7_recur(i + 1, k);
+    }
+}
+
+short *odd_And_Even(short *array) {
+    //short *arr2 = (short *)malloc(10 * sizeof(short));
+
+}
+
 int main() {
+    short arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    short *ptr = arr;
+
+    odd_And_Even(ptr);
+
+
     char x = aufgabe15_3_a(1, 2, 3);
     char y = aufgabe15_3_b(1, 2, 3);
     printf("%c, %c\n\n", x, y);
 
     aufgabe_15_4(4);
 
-    printf("%d", aufgabe15_5(80));
+    printf("%d\n\n", aufgabe15_5(80));
+
+    aufgabe15_7_iter(1, 5);
+
+    aufgabe15_7_recur(1, 5);
     return 0;
 }
