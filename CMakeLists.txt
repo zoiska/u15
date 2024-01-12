@@ -17,4 +17,6 @@ add_executable(u15 main.cpp
         Rennstall/Rennwagen.cpp
         Rennstall/Rennwagen.h
         Rennstall/Saison.cpp
-        Rennstall/Saison.h)
+        Rennstall/Saison.h
+        Monitor/Monitor.cpp
+        Monitor/Monitor.h)
