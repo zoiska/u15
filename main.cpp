@@ -1,6 +1,8 @@
 #include <iostream>
 #include <array>
 
+#include "Monitor/Monitor.h"
+
 using namespace std;
 
 char aufgabe15_3_a(int a, int b, int c) {
@@ -93,5 +95,10 @@ int main() {
     aufgabe15_7_iter(1, 5);
 
     aufgabe15_7_recur(1, 5);
+
+
+    Monitor meinMonitor("Asus", 2020, 16, 1920, 1080);
+    meinMonitor.drucke();
+
     return 0;
 }
